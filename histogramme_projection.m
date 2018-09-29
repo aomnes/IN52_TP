@@ -1,4 +1,6 @@
-image = imread('app.tif');
+clear;
+
+image = imread('test.tif');
 
 %on recupere l'histogramme de l'axe des ordonnees
 h_horizontale = histo_horizontale(image);
@@ -6,10 +8,10 @@ h_horizontale = histo_horizontale(image);
 % plot(result);
 coord_ligne = getCoordV(h_horizontale, image);
 % imshow(image);
-coordEachDigits = getCoordH(coord_ligne, 20, 10, image);
+coordEachDigits = getCoordH(coord_ligne, 10, 10, image);
 
 
-optimiserEachDigit(coordEachDigits, image, 10, 20);
+optimiserEachDigit(coordEachDigits, image, 10, 10);
 
 
 function  [result] = histo_horizontale(I)

@@ -39,13 +39,13 @@ function [coordEachDigits] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 1)]);
            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 2), coord_ligne(num_ligne, 2)]);
            
-%            coordEachDigits(num_ligne, 1, i) = coord_col(num_ligne, 1, i); %xa
-%            coordEachDigits(num_ligne, 2, i) = coord_ligne(num_ligne, 1);%ya
-           scatter(coordEachDigits(num_ligne, 1, i),coordEachDigits(num_ligne, 2, i),'r*');
+           coordEachDigits(num_ligne, 1, i) = coord_col(num_ligne, 1, i); %xa
+           coordEachDigits(num_ligne, 2, i) = coord_ligne(num_ligne, 1);%ya
+%            scatter(coordEachDigits(num_ligne, 1, i),coordEachDigits(num_ligne, 2, i),'r*');
            
-%            coordEachDigits(num_ligne, 3, i) = coord_col(num_ligne, 2, i); %xb
-%            coordEachDigits(num_ligne, 4, i) = coord_ligne(num_ligne, 2); %yb
-           scatter(coordEachDigits(num_ligne, 3, i),coordEachDigits(num_ligne, 4, i),'r*');
+           coordEachDigits(num_ligne, 3, i) = coord_col(num_ligne, 2, i); %xb
+           coordEachDigits(num_ligne, 4, i) = coord_ligne(num_ligne, 2); %yb
+%            scatter(coordEachDigits(num_ligne, 3, i),coordEachDigits(num_ligne, 4, i),'r*');
         end
     end
 %     coordEachDigits

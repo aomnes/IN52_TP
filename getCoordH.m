@@ -2,9 +2,11 @@ function [coord_col] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
     %creer un tableau nombre ligne (10) x 2 x [10 ou 20]
     coord_col = zeros(nb_ligne, 2, nb_col);
     
+    figure('Name','Image avec col!!!');
+    imshow(image);
     %cette boucle cree un tableau contenant la ligne et utilise ce
     %tableau
-    for num_ligne = 1:1
+    for num_ligne = 1:nb_ligne
         tmp_image_ligne = image(coord_ligne(num_ligne, 1):coord_ligne(num_ligne, 2),:);
         
         %creation de l'histogramme de la ligne
@@ -28,8 +30,6 @@ function [coord_col] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
             end
         end
         
-        figure('Name','Image avec col!!!');
-        imshow(image);
         for i = 1:nb_col
            %info line: line([x1,x2],[y1,y2])
            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 1, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);

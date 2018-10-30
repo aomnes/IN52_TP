@@ -1,10 +1,12 @@
-function optimiserEachDigit(coordEachDigits, image, nb_digits, nb_times)
+function [coordEachDigits] = optimiserEachDigit(coordEachDigits, image, nb_digits, nb_times)
 
     % coordEachDigits(num_ligne, 1, num_fois) %xa
     % coordEachDigits(num_ligne, 2, num_fois) %ya
     % 
     % coordEachDigits(num_ligne, 3, num_fois) %xb
     % coordEachDigits(num_ligne, 4, num_fois) %yb
+    figure('Name','Point image');
+    imshow(image);
     for num_ligne = 1:nb_digits
         for num_fois = 1:nb_times
             tmp_digit = image(coordEachDigits(num_ligne, 2, num_fois):coordEachDigits(num_ligne, 4, num_fois),coordEachDigits(num_ligne, 1, num_fois):coordEachDigits(num_ligne, 3, num_fois));
@@ -19,7 +21,8 @@ function optimiserEachDigit(coordEachDigits, image, nb_digits, nb_times)
             %num de la col
             size_im = size(h_vertical);
             tmp_y1 = 1;
-            tmp_y2 = size(h_vertical);
+            tmp_y2 = size(h_vertical, 1);
+            size(tmp_digit)
             for i = 1:size_im(1)
                 if h_vertical(i, 1) > 0 && col == false
                     col = true;
@@ -30,11 +33,17 @@ function optimiserEachDigit(coordEachDigits, image, nb_digits, nb_times)
                     break;
                 end
             end
-            tmp_result = tmp_digit(tmp_y1:tmp_y2,:);
+
+            %tmp_result = tmp_digit(tmp_y1:tmp_y2,:);
             %imshow(tmp_result);
+            %save(tmp_result,num_ligne,num_fois)
             
+            coordEachDigits(num_ligne, 2, num_fois) = coordEachDigits(num_ligne, 2, num_fois) + tmp_y1;%ya
+            coordEachDigits(num_ligne, 4, num_fois) = coordEachDigits(num_ligne, 4, num_fois) - (size(tmp_digit, 1) - tmp_y2);%yb
             
-            save(tmp_result,num_ligne, num_fois)
+            hold on
+            plot(coordEachDigits(num_ligne, 1, num_fois), coordEachDigits(num_ligne, 2, num_fois), 'g.');
+            plot(coordEachDigits(num_ligne, 3, num_fois), coordEachDigits(num_ligne, 4, num_fois), 'r.');           
         end
     end
     

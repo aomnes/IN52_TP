@@ -22,7 +22,7 @@ function [coordEachDigits] = optimiserEachDigit(coordEachDigits, image, nb_digit
             size_im = size(h_vertical);
             tmp_y1 = 1;
             tmp_y2 = size(h_vertical, 1);
-            size(tmp_digit)
+            size(tmp_digit);
             for i = 1:size_im(1)
                 if h_vertical(i, 1) > 0 && col == false
                     col = true;

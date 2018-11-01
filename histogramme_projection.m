@@ -11,9 +11,8 @@ coord_ligne = getCoordV(h_horizontale, image);
 coordEachDigits = getCoordH(coord_ligne, 20, 10, image);
 %on optimise l'encapsulation des digits
 coordEachDigitsOpt = optimiserEachDigit(coordEachDigits, image, 10, 20);
-
-profils = getProfils(coordEachDigitsOpt, 10, 20, image);
-
+nb_trait = 5;
+profils = getProfils(coordEachDigitsOpt, 10, 20, image, nb_trait)
 
 
 

@@ -12,9 +12,11 @@ coordEachDigits = getCoordH(coord_ligne, 20, 10, image);
 %on optimise l'encapsulation des digits
 coordEachDigitsOpt = optimiserEachDigit(coordEachDigits, image, 10, 20);
 nb_trait = 5;
-profils = getProfils(coordEachDigitsOpt, 10, 20, image, nb_trait)
+%profils ==> vecteur nb_trait * nb_digits ->10
+profils = getProfils(coordEachDigitsOpt, 10, 20, image, nb_trait);
 
-
+proba_result = testClassifieur1(profils, nb_trait);
+proba_result(:,:,10)
 
 function  [result] = histo_horizontale(I)
 result = sum(I < 50, 2);

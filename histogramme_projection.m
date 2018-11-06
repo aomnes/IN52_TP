@@ -15,13 +15,13 @@ nb_trait = 5;
 nb_zone_h = 3;
 %classificateur 1
 %profils ==> vecteur nb_trait * nb_digits ->10
-%%%%%%%%%%%profils = getProfils(coordEachDigitsOpt, 10, 20, image, nb_trait);
-%proba_result = testClassifieur1(profils, nb_trait);
+profils1 = getProfils(coordEachDigitsOpt, 10, 20, image, nb_trait);
+proba_result_classifieur1 = testClassifieur1(profils1, nb_trait);
 
 %classificateur 2
-k = 5;
-profils2 = getDenties(coordEachDigitsOpt, 10, 20, image, nb_zone_h);
-%proba_result = testClassifieur2(profils2, nb_zone_h, k);
+k = 1;
+densities1 = getDenties(coordEachDigitsOpt, 10, 20, image, nb_zone_h);
+proba_result_classifieur2 = testClassifieur2(densities1, nb_zone_h, k);
 
 function  [result] = histo_horizontale(I)
 result = sum(I < 50, 2);

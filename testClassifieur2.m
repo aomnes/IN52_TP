@@ -1,4 +1,4 @@
-function [outputArg1,outputArg2] = testClassifieur2(densities_train ,nb_zone_h, k)
+function [densities] = testClassifieur2(densities_train ,nb_zone_h, k)
     image = imread('test.tif');
 
     %on recupere l'histogramme de l'axe des ordonnees

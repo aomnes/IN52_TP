@@ -4,8 +4,8 @@ function [coordEachDigits] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
     
     coordEachDigits = zeros(nb_ligne, 4, nb_col);
     
-    figure('Name','Image digits encapsulation');
-    imshow(image);
+%     figure('Name','Image digits encapsulation');
+%     imshow(image);
     %cette boucle cree un tableau contenant la ligne et utilise ce
     %tableau
     for num_ligne = 1:nb_ligne
@@ -34,10 +34,10 @@ function [coordEachDigits] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
         
         for i = 1:nb_col
            %info line: line([x1,x2],[y1,y2])
-           line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 1, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);
-           line([coord_col(num_ligne, 2, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);
-           line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 1)]);
-           line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 2), coord_ligne(num_ligne, 2)]);
+%            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 1, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);
+%            line([coord_col(num_ligne, 2, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);
+%            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 1)]);
+%            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 2), coord_ligne(num_ligne, 2)]);
            
            coordEachDigits(num_ligne, 1, i) = coord_col(num_ligne, 1, i); %xa
            coordEachDigits(num_ligne, 2, i) = coord_ligne(num_ligne, 1);%ya

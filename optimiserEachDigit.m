@@ -5,8 +5,8 @@ function [coordEachDigits] = optimiserEachDigit(coordEachDigits, image, nb_digit
     % 
     % coordEachDigits(num_ligne, 3, num_fois) %xb
     % coordEachDigits(num_ligne, 4, num_fois) %yb
-    figure('Name','Point image');
-    imshow(image);
+%     figure('Name','Point image');
+%     imshow(image);
     for num_ligne = 1:nb_digits
         for num_fois = 1:nb_times
             tmp_digit = image(coordEachDigits(num_ligne, 2, num_fois):coordEachDigits(num_ligne, 4, num_fois),coordEachDigits(num_ligne, 1, num_fois):coordEachDigits(num_ligne, 3, num_fois));
@@ -41,9 +41,9 @@ function [coordEachDigits] = optimiserEachDigit(coordEachDigits, image, nb_digit
             coordEachDigits(num_ligne, 2, num_fois) = coordEachDigits(num_ligne, 2, num_fois) + tmp_y1;%ya
             coordEachDigits(num_ligne, 4, num_fois) = coordEachDigits(num_ligne, 4, num_fois) - (size(tmp_digit, 1) - tmp_y2);%yb
             
-            hold on
-            plot(coordEachDigits(num_ligne, 1, num_fois), coordEachDigits(num_ligne, 2, num_fois), 'g.');
-            plot(coordEachDigits(num_ligne, 3, num_fois), coordEachDigits(num_ligne, 4, num_fois), 'r.');           
+%             hold on
+%             plot(coordEachDigits(num_ligne, 1, num_fois), coordEachDigits(num_ligne, 2, num_fois), 'g.');
+%             plot(coordEachDigits(num_ligne, 3, num_fois), coordEachDigits(num_ligne, 4, num_fois), 'r.');           
         end
     end
     

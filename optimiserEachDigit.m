@@ -56,14 +56,3 @@ function  [result] = histo_horizontale(I)
     result = sum(I < 50, 2);
 end
 
-function save(tmp_digit,num_ligne, num_fois)
-    destinationFolder = '/Users/omnes.antoine/Documents/Etudes/UTBM 2018 - 2019/UV/IN54/TP/Digits_test';
-    if ~exist(destinationFolder, 'dir')
-      mkdir(destinationFolder);
-    end
-    baseFileName = sprintf('digit_%d - numero_%d.png', num_ligne - 1, num_fois); % e.g. "1.png"
-    fullFileName = fullfile(destinationFolder, baseFileName);
-    display(fullFileName);
-    imwrite(tmp_digit, fullFileName); % img respresents input image.
-end
-

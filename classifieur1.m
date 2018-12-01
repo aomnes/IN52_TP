@@ -1,6 +1,9 @@
-function [proba_result_classifieur1] = classifieur1(coordEachDigitsOpt, image,nb_trait)
+function [profils_test] = classifieur1(coordEachDigitsOpt_Training, coordEachDigitsOpt_Test, image_training, image_test, nb_trait)
     %profils ==> vecteur nb_trait * nb_digits ->10
-    profils1 = getProfils(coordEachDigitsOpt, 10, 20, image, nb_trait);
-    proba_result_classifieur1 = testClassifieur1(profils1, nb_trait);
+    nb_digits = 10;
+    nb_time_each_digits_Training = 20;
+    nb_time_each_digits_Test = 10;
+    profils_train = getProfils(coordEachDigitsOpt_Training, nb_digits, nb_time_each_digits_Training, image_training, nb_trait);
+    profils_test = getProfilsTest(coordEachDigitsOpt_Test, nb_digits, nb_time_each_digits_Test, image_test, profils_train, nb_trait);    
 end
 

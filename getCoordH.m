@@ -4,8 +4,6 @@ function [coordEachDigits] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
     
     coordEachDigits = zeros(nb_ligne, 4, nb_col);
     
-%     figure('Name','Image digits encapsulation');
-%     imshow(image);
     %cette boucle cree un tableau contenant la ligne et utilise ce
     %tableau
     for num_ligne = 1:nb_ligne

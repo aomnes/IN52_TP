@@ -1,9 +1,9 @@
-function [P] = getProfilsTest(coordEachDigits, nb_ligne, nb_col, image, profils_train, nb_trait)
+function [P] = getProfilsTest(coordEachDigitsOpt_Test, nb_ligne, nb_col, image, profils_train, nb_trait)
     %result(proba_each_digits, nb_col, nb_digits);
     P = zeros(10, 10, 10);
     for num_ligne = 1:nb_ligne
         for num_col = 1:nb_col
-            im_tmp = image(coordEachDigits(num_ligne, 2, num_col):coordEachDigits(num_ligne, 4, num_col), coordEachDigits(num_ligne, 1, num_col):coordEachDigits(num_ligne, 3, num_col));
+            im_tmp = image(coordEachDigitsOpt_Test(num_ligne, 2, num_col):coordEachDigitsOpt_Test(num_ligne, 4, num_col), coordEachDigitsOpt_Test(num_ligne, 1, num_col):coordEachDigitsOpt_Test(num_ligne, 3, num_col));
             %figure('Name','Image');
             %imshow(im_tmp);
             tmp = getProfilImage(im_tmp, nb_trait);

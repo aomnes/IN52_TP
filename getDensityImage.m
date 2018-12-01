@@ -1,3 +1,6 @@
+%%%
+% Utilisé dans la fonction getDenties.m et getDensitiesTest.m
+%%%
 function [result] = getDensityImage(image, nb_zone_h)
     result = zeros(nb_zone_h^2, 1);
     sze = size(image);

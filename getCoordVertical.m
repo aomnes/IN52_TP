@@ -1,4 +1,4 @@
-function [coord_ligne] = getCoordV(histo, image)
+function [coord_ligne] = getCoordVertical(histo, image)
     nb_ligne = 0;
     ligne = false;
 

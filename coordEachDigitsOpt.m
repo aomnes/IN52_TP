@@ -3,9 +3,9 @@ function coordEachDigitsOpt_matrix = coordEachDigitsOpt(image, nb_times_each_dig
     h_horizontale = histo_horizontale(image);
     % figure('Name','Histogramme Horizontale');
     % plot(result);
-    coord_ligne = getCoordV(h_horizontale, image);
+    coord_ligne = getCoordVertical(h_horizontale, image);
     % imshow(image);
-    coordEachDigits = getCoordH(coord_ligne, nb_times_each_digit, 10, image);
+    coordEachDigits = getCoordHorizontal(coord_ligne, nb_times_each_digit, 10, image);
     %on optimise l'encapsulation des digits
     coordEachDigitsOpt_matrix = optimiserEachDigit(coordEachDigits, image, 10, nb_times_each_digit);
 end

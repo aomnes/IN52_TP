@@ -1,3 +1,6 @@
+%%%
+% Utilisé dans la fonction getProfils.m et getProfilsTest.m
+%%%
 function [profils] = getProfilImage(image, nb_trait)
     profils = zeros(nb_trait, 2);
     %diviser la hauteur en nb_trait partie pour caster en entier

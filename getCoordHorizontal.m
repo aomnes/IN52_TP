@@ -1,4 +1,4 @@
-function [coordEachDigits] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
+function [coordEachDigits] = getCoordHorizontal(coord_ligne, nb_col, nb_ligne, image)
     %creer un tableau nombre ligne (10) x 2 x [10 ou 20]
     coord_col = zeros(nb_ligne, 2, nb_col);
     
@@ -32,10 +32,10 @@ function [coordEachDigits] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
         
         for i = 1:nb_col
            %info line: line([x1,x2],[y1,y2])
-%            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 1, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);
-%            line([coord_col(num_ligne, 2, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);
-%            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 1)]);
-%            line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 2), coord_ligne(num_ligne, 2)]);
+%             line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 1, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);
+%             line([coord_col(num_ligne, 2, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 2)]);
+%             line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 1), coord_ligne(num_ligne, 1)]);
+%             line([coord_col(num_ligne, 1, i), coord_col(num_ligne, 2, i)],[coord_ligne(num_ligne, 2), coord_ligne(num_ligne, 2)]);
            
            coordEachDigits(num_ligne, 1, i) = coord_col(num_ligne, 1, i); %xa
            coordEachDigits(num_ligne, 2, i) = coord_ligne(num_ligne, 1);%ya
@@ -43,7 +43,7 @@ function [coordEachDigits] = getCoordH(coord_ligne, nb_col, nb_ligne, image)
            
            coordEachDigits(num_ligne, 3, i) = coord_col(num_ligne, 2, i); %xb
            coordEachDigits(num_ligne, 4, i) = coord_ligne(num_ligne, 2); %yb
-%            scatter(coordEachDigits(num_ligne, 3, i),coordEachDigits(num_ligne, 4, i),'r*');
+%           scatter(coordEachDigits(num_ligne, 3, i),coordEachDigits(num_ligne, 4, i),'r*');
         end
     end
 %     coordEachDigits

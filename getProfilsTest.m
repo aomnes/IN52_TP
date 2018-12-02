@@ -3,10 +3,10 @@ function [P] = getProfilsTest(coordEachDigitsOpt_Test, nb_ligne, nb_col, image, 
     P = zeros(10, 10, 10);
     for num_ligne = 1:nb_ligne
         for num_col = 1:nb_col
+            %on recupere l'image du digit en cours et on la stock dans im_tmp
             im_tmp = image(coordEachDigitsOpt_Test(num_ligne, 2, num_col):coordEachDigitsOpt_Test(num_ligne, 4, num_col), coordEachDigitsOpt_Test(num_ligne, 1, num_col):coordEachDigitsOpt_Test(num_ligne, 3, num_col));
-            %figure('Name','Image');
-            %imshow(im_tmp);
             tmp = getProfilImage(im_tmp, nb_trait);
+            
             P(:, num_col, num_ligne) = compareEachDigit(tmp, profils_train);
         end
     end

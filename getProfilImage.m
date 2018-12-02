@@ -1,5 +1,5 @@
 %%%
-% Utilisé dans la fonction getProfils.m et getProfilsTest.m
+% Utilisé dans la fonction getProfils.m et getProfilsTest.m retour: matrice size[nb_trait * 2];
 %%%
 function [profils] = getProfilImage(image, nb_trait)
     profils = zeros(nb_trait, 2);

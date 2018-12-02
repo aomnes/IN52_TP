@@ -1,3 +1,8 @@
+% Créer un tableau de taille [proba_each_digits, nb_col, 10]
+% Permet de tester un tableau d'image en entrée en utilisant les valeurs
+% trouvée à l'entrainement
+% il nous retourne pour chaque digit de l'image la probabilité qu'il
+% appartient à chaque classe 0...8.9
 function [P] = getProfilsTest(coordEachDigitsOpt_Test, nb_ligne, nb_col, image_test, profils_train, nb_trait)
     %result(proba_each_digits, nb_col, nb_digits);
     P = zeros(10, 10, 10);

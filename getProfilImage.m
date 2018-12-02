@@ -1,5 +1,8 @@
 %%%
-% Utilisé dans la fonction getProfils.m et getProfilsTest.m retour: matrice size[nb_trait * 2];
+% Utilisé dans la fonction getProfils.m et getProfilsTest.m
+% Permet de recuperer le profile de l'image entrée (image d'un digit
+% unique) en fonction du nombre de trait voulue
+% retour: matrice size[nb_trait * 2];
 %%%
 function [profils] = getProfilImage(image, nb_trait)
     profils = zeros(nb_trait, 2);

@@ -1,3 +1,5 @@
+%on utilise l'histogramme en entrée afin de trouver le début et la fin de
+%chaque ligne de chiffre
 function [coord_ligne] = getCoordVertical(histo, image)
     nb_ligne = 0;
     ligne = false;
